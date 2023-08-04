@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// import HelloWorld from './components/HelloWorld.vue';
+import CustomForm from "./components/CustomForm.vue";
 </script>
 
 <template>
@@ -12,6 +12,7 @@
     <p v-show="count >= 5">Your count has crossed : 5</p>    
     <p>Count is: {{ count }}</p>
     <button @click="count++">Add 1</button>
+    <CustomForm/>
   </div>
   <!-- <HelloWorld msg="Vite + Vue" /> -->
 </template>
