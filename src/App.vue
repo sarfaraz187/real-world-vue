@@ -4,15 +4,15 @@ import CustomForm from "./components/CustomForm.vue";
 
 <template>
   <div>
-    <h1>{{ title }}</h1>
+    <!-- <h1>{{ title }}</h1> -->
     <!-- <p v-if="isVisible">{{ isVisible}}</p>
     <p v-else-if="!isVisible">{{ isVisible}}</p> -->
 
     <!-- <button v-on:click="toggle">Click Me!!</button> -->
-    <p v-show="count >= 5">Your count has crossed : 5</p>    
+    <p v-show="count >= 5">Your count has crossed : 5</p>
     <p>Count is: {{ count }}</p>
     <button @click="count++">Add 1</button>
-    <CustomForm/>
+    <CustomForm />
   </div>
   <!-- <HelloWorld msg="Vite + Vue" /> -->
 </template>

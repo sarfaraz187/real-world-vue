@@ -1,8 +1,8 @@
 <template>
   <form @submit.prevent="handleSubmit">
     <h3>{{ title }}</h3>
-    <input type="email" /> <br />
-    <input type="password" /> <br />
+    <input v-model="email" type="email" /> <br />
+    <input v-model="password" type="password" /> <br />
     <button>Submit</button>
   </form>
 </template>
@@ -14,11 +14,13 @@ export default {
   data() {
     return {
       title: "Login Form",
+      email: "",
+      password: "",
     };
   },
   methods: {
     handleSubmit() {
-      console.log("Submitted");
+      console.log("Submitted :", this.email, this.password);
     },
   },
 };
