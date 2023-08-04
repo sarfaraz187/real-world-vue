@@ -1,18 +1,37 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue';
 </script>
 
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    <h1>{{ title }}</h1>
+    <!-- <p v-if="isVisible">{{ isVisible}}</p>
+    <p v-else-if="!isVisible">{{ isVisible}}</p> -->
+
+    <!-- <button v-on:click="toggle">Click Me!!</button> -->
+    <p v-show="count >= 5">Your count has crossed : 5</p>    
+    <p>Count is: {{ count }}</p>
+    <button @click="count++">Add 1</button>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <!-- <HelloWorld msg="Vite + Vue" /> -->
 </template>
+
+<script lang="ts">
+export default {
+  data() {
+    return {
+      title: "OneStopTransformation AG",
+      isVisible: true,
+      count: 0,
+    };
+  },
+  methods: {
+    toggle() {
+      this.isVisible = !this.isVisible;
+    },
+  },
+};
+</script>
 
 <style scoped>
 .logo {
