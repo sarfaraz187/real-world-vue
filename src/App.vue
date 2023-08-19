@@ -1,26 +1,29 @@
 <script setup>
 import { ref } from "vue";
-
+import { useTodoListStore } from "./store/todoList.js";
 const showModal = ref(false);
 const newNote = ref("");
 const notes = ref([]);
 const errorMessage = ref("");
 
+let store = useTodoListStore();
 function getRandomColor() {
   return "hsl(" + Math.random() * 360 + ", 100%, 75%)";
 }
 
 const addNote = () => {
   console.log(newNote.value);
-  if (newNote.value.trim().length < 10) {
-    return (errorMessage.value = "Note needs to have atleast 10 characters");
-  }
-  notes.value.push({
+  // if (newNote.value.trim().length < 10) {
+  //   return (errorMessage.value = "Note needs to have atleast 10 characters");
+  // }
+  let obj = {
     id: Math.floor(Math.random() * 100000),
     text: newNote.value,
     date: new Date(),
     backgroundColor: getRandomColor(),
-  });
+  };
+  notes.value.push(obj);
+  store.addToList(obj);
   showModal.value = false;
   newNote.value = "";
 };
